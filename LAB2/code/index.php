@@ -1,8 +1,26 @@
 <?php
 
-$very_bad_unclear_name = "15 chicken wings";
+$num1 = 20;
+$num2 = 10;
 
-$order = & $very_bad_unclear_name;
-$order .= "on a sesame bun";
+echo $num1;
+echo "<br>"; 
+echo "\n"; 
+echo $num2;
 
-echo "\nYour order is:$very_bad_unclear_name.";
+echo "<br>";
+echo "\n";
+
+$num3 = 2.28;
+echo $num3;
+echo "<br>";
+echo "\n";
+
+echo $num1 - $num2 + 2;
+echo "<br>";
+echo "\n";
+
+$last_month = 1187.23;
+$this_month = 1089.98;
+
+echo $last_month - $this_month;
