@@ -1,80 +1,116 @@
 <?php
 
-function increaseEnthusiasm($string) {
+$emptArr = array();
 
-    return $string . "!";
+function XArray($array, $count) {
+    for ($i=1; $i<=$count; $i++) {
+        $array[] = str_repeat("x", $i);
+    }
 
-}
-
-echo increaseEnthusiasm("NWR is a genius");
-
-echo "<br>";
-echo "\n";
-
-function repeatThreeTimes($string) {
-    return $string . $string . $string;
-}
-
-echo repeatThreeTimes("helloWorld");
-
-echo "<br>";
-echo "\n";
-
-echo increaseEnthusiasm(repeatThreeTimes("SoEz"));
-
-echo "<br>";
-echo "\n";
-
-function cut($str, $num = 10) {
-
-    if (strlen($str) <= $num) {
-        return $str;
-    } 
-    
-    else {
-        $result = '';
-        for ($i = 0; $i < $num; $i++) {
-            $result .= $str[$i];
-        }
-        return $result;
+    foreach ($array as $value) {
+        echo "\n";
+        echo $value;
     }
 }
 
-echo cut("StrengthOfTheWorld", 8);
+echo XArray($emptArr, 4);
 
 echo "<br>";
 echo "\n";
 
-$anyArray = array(54, 23, 2, 67, 5, -5, 12, 1);
+$emptyArr2 = array();
 
-function recursArr($array, $len, $i = 0)
+function arrayFill($elem, $count) {
+    for ($i=0; $i<$count; $i++) {
+        $emptyArr2[] = $elem;
+    }
+
+    foreach ($emptyArr2 as $value) {
+        echo "\n";
+        echo $value;
+    }
+}
+
+echo arrayFill('x', 5);
+
+echo "<br>";
+echo "\n";
+
+$mas2nArr = array(
+    array(1, 2, 3),
+    array(4, 5),
+    array(6)
+);
+
+function mas2Arr($mas2nArr)
 {
-    if ($i == $len) {
-        return;
+    $sum = 0;
+    foreach ($mas2nArr as $array) {
+        foreach ($array as $elem) {
+            $sum += $elem;
+        }
     }
-    echo $array[$i] . " ";
-    $i++;
-    recursArr($array, $len, $i);
+    return $sum;
 }
 
-recursArr($anyArray, count($anyArray));
+echo mas2Arr($mas2nArr);
 
 echo "<br>";
 echo "\n";
 
-function sumDigits($number) {
-    while ($number > 9) {
-        $sum = 0;
-        while ($number > 0) {
-            $digit = $number % 10;
-            $sum += $digit;
-            $number = (int)($number / 10);
-        }
-        $number = $sum;
+$count = 1;
+$array2d = array();
+for ($i = 0; $i < 3; $i++) {
+    for ($j = &$count; $j < 10; $j++) {
+        $array2d[$i][] = $j;
     }
-    return $number;
 }
 
-$number = 7853;
-$result = sumDigits($number);
-echo "Сумма цифр числа $number равна $result";
+foreach ($array2d as $array) {
+    foreach ($array as $elem) {
+        echo $elem . ' ';
+    }
+}
+
+echo "<br>";
+echo "\n";
+
+$arrayN = array(2, 5, 3, 9);
+
+$firstNumber = $arrayN[0] * $arrayN[1];
+$secondNumber = $arrayN[2] * $arrayN[3];
+$result = $firstNumber + $secondNumber;
+echo $result;
+
+echo "<br>";
+echo "\n";
+
+$user = array(
+    'firstName' => 'George',
+    'lastName' => 'Lyamin',
+    'patronymic' => 'Winding'
+);
+echo $user['firstName'] . ' ' . $user['lastName'] . ' ' . $user['patronymic'];
+
+echo "<br>";
+echo "\n";
+
+$date = array('year' => 2001, 'month' => 9, 'day' => 11);
+$str = '';
+foreach ($date as $value) {
+    $str .= $value . '-';
+}
+$str = substr($str, 0, -1);
+echo $str;
+
+echo "<br>";
+echo "\n";
+
+$arr = ['a', 'b', 'c', 'd', 'e'];
+$count = 0;
+foreach ($arr as $elem) {
+    $count++;
+}
+echo $count;
+echo $arr[$count - 1];
+echo $arr[$count - 2];
