@@ -1,215 +1,116 @@
 <?php
 
-// %
+$emptArr = array();
 
-$a = 10;
-$b = 3;
+function XArray($array, $count) {
+    for ($i=1; $i<=$count; $i++) {
+        $array() = str_repeat("x", $i);
+    }
 
-$rest = $a % $b;
-
-echo $rest;
-
-echo "<br>";
-
-echo "\n";
-
-if ($rest == 0) {
-
-    echo "Делится без остатка с результатом: ";
-
-    echo $a / $b;
-
+    foreach ($array as $value) {
+        echo "\n";
+        echo $value;
+    }
 }
 
-else {
+echo XArray($emptArr, 4);
 
-    echo "Делится с остатком: ";
+echo "<br>";
+echo "\n";
 
-    echo $rest;
+$emptyArr2 = array();
 
+function arrayFill($elem, $count) {
+    for ($i=0; $i<$count; $i++) {
+        $emptyArr2() = $elem;
+    }
+
+    foreach ($emptyArr2 as $value) {
+        echo "\n";
+        echo $value;
+    }
 }
 
-echo "<br>";
-
-echo "\n";
-
-// Cтепень и корень
-
-$st = pow(2,10);
-
-echo sqrt(245);
+echo arrayFill('x', 5);
 
 echo "<br>";
-
 echo "\n";
 
-
-
-
-$array = array(4,2,5,19,13,0,10);
-
-$sum = 0;
-
-foreach ($array as $value) {
-
-    $sum += pow($value, 2);
-
-}
-
-echo "Результат операций с массивом: " . sqrt($sum);
-
-echo "<br>";
-
-echo "\n";
-
-// округление
-
-$num379 = sqrt(379);
-
-echo round($num379);
-
-echo "<br>";
-
-echo "\n";
-
-echo round($num379,1);
-
-echo "<br>";
-
-echo "\n";
-
-echo round($num379,2);
-
-echo "<br>";
-
-echo "\n";
-
-// округление до нижней и верхней границ
-
-$num587 = sqrt(587);
-
-$floorCeil = array(
-
-    "floor" => floor($num587),
-
-    "ceil" => ceil($num587)
-
+$mas2nArr = array(
+    array(1, 2, 3),
+    array(4, 5),
+    array(6)
 );
 
-// минимум и максимум
-
-$MinMax = array(4,-2,5,19,-130,0,10);
-
-echo min($MinMax);
-
-echo "<br>";
-
-echo "\n";
-
-echo max($MinMax);
-
-// рандом
-
-echo rand(1,100);
-
-for ($i = 0; $i < 10; $i++) {
-
-    $randArr[] = rand();
-
+function mas2Arr($mas2nArr)
+{
+    $sum = 0;
+    foreach ($mas2nArr as $array) {
+        foreach ($array as $elem) {
+            $sum += $elem;
+        }
+    }
+    return $sum;
 }
 
-foreach ($randArr as $value) {
-
-    echo $value . " ";
-
-}
+echo mas2Arr($mas2nArr);
 
 echo "<br>";
-
 echo "\n";
 
-// модуль
-
+$count = 1;
+$array2d = array();
 for ($i = 0; $i < 3; $i++) {
-
-    $a = rand(1, 25);
-
-    $b = rand(1, 25);
-
-    echo abs($a - $b);
-
-    echo "<br>";
-
-    echo "\n";
-
-}
-
-$Arr = array(1,2,-1,-2,3,-3);
-
-$postArr = array();
-
-foreach ($Arr as $value) {
-
-    $postArr() = abs($value);
-
-}
-
-foreach ($postArr as $value) {
-
-    echo $value . " ";
-
-}
-
-echo "<br>";
-
-echo "\n";
-
-// общее:1
-
-$anyNum = 228;
-
-$anyArr = array();
-
-for ($i=1; $i <= 228; $i++) {
-
-    if (($anyNum % $i) == 0) {
-
-        $anyArr() = $i;
-
+    for ($j = &$count; $j < 10; $j++) {
+        $array2d($i)() = $j;
     }
-
 }
 
-foreach ($anyArr as $value) {
-
-    echo $value . " ";
-
+foreach ($array2d as $array) {
+    foreach ($array as $elem) {
+        echo $elem . ' ';
+    }
 }
 
 echo "<br>";
-
 echo "\n";
 
-// общее:2
+$arrayN = array(2, 5, 3, 9);
 
-$sumArr = array(1,2,3,4,5,6,7,8,9,10);
+$firstNumber = $arrayN(0) * $arrayN(1);
+$secondNumber = $arrayN(2) * $arrayN(3);
+$result = $firstNumber + $secondNumber;
+echo $result;
 
-$sum10 = 0;
+echo "<br>";
+echo "\n";
 
+$user = array(
+    'firstName' => 'George',
+    'lastName' => 'Lyamin',
+    'patronymic' => 'Winding'
+);
+echo $user['firstName'] . ' ' . $user['lastName'] . ' ' . $user['patronymic'];
+
+echo "<br>";
+echo "\n";
+
+$date = array('year' => 2001, 'month' => 9, 'day' => 11);
+$str = '';
+foreach ($date as $value) {
+    $str .= $value . '-';
+}
+$str = substr($str, 0, -1);
+echo $str;
+
+echo "<br>";
+echo "\n";
+
+$arr = ('a', 'b', 'c', 'd', 'e');
 $count = 0;
-
-foreach ($sumArr as $value) {
-
-    $sum10 += $value;
-
-    $count += 1;
-
-    if ($sum10 > 10) {
-
-        echo "Количество первых элементов массива: $count.";
-
-        break;
-
-    }
-
+foreach ($arr as $elem) {
+    $count++;
 }
+echo $count;
+echo $arr($count - 1);
+echo $arr($count - 2);
