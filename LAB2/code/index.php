@@ -1,114 +1,147 @@
-$emptArr = array[];
+$randArr = array[];
 
-function XArray($array, $count) {
-    for ($i=1; $i<=$count; $i++) {
-        $array[] = str_repeat("x", $i);
-    }
+$randNum = rand(1, 10);
 
-    foreach ($array as $value) {
-        echo "\n";
-        echo $value;
-    }
+
+
+
+for ($i = 0; $i < $randNum; $i++) {
+
+    $randArr[] = rand(1, 100);
+
 }
 
-echo XArray($emptArr, 4);
 
-echo "<br>";
-echo "\n";
 
-$emptyArr2 = array[];
 
-function arrayFill($elem, $count) {
-    for ($i=0; $i<$count; $i++) {
-        $emptyArr2[] = $elem;
-    }
+foreach ($randArr as $elem) {
 
-    foreach ($emptyArr2 as $value) {
-        echo "\n";
-        echo $value;
-    }
+    echo $elem . ' ';
+
 }
 
-echo arrayFill('x', 5);
+
+
 
 echo "<br>";
+
 echo "\n";
 
-$mas2nArr = array(
-    array(1, 2, 3),
-    array(4, 5),
-    array(6)
-);
 
-function mas2Arr($mas2nArr)
-{
-    $sum = 0;
-    foreach ($mas2nArr as $array) {
-        foreach ($array as $elem) {
-            $sum += $elem;
-        }
-    }
-    return $sum;
+
+
+$avValue = array_sum($randArr) / count($randArr);
+
+echo $avValue;
+
+
+
+
+echo "<br>";
+
+echo "\n";
+
+
+
+
+function ArithmProgress($x) {
+
+    return $x*($x + 1) / 2;
+
 }
 
-echo mas2Arr($mas2nArr);
+
+
+
+echo ArithmProgress(100);
+
+
+
 
 echo "<br>";
+
 echo "\n";
 
-$count = 1;
-$array2d = array[];
-for ($i = 0; $i < 3; $i++) {
-    for ($j = &$count; $j < 10; $j++) {
-        $array2d[$i][] = $j;
-    }
+
+
+
+$randArr = array[];
+
+$randNum = rand(1, 10);
+
+
+
+
+for ($i = 0; $i < $randNum; $i++) {
+
+    $randArr[] = rand(1, 100);
+
 }
 
-foreach ($array2d as $array) {
-    foreach ($array as $elem) {
-        echo $elem . ' ';
-    }
+
+
+
+foreach ($randArr as $elem) {
+
+    echo $elem . ' ';
+
 }
 
-echo "<br>";
-echo "\n";
 
-$arrayN = array(2, 5, 3, 9);
 
-$firstNumber = $arrayN[0] * $arrayN[1];
-$secondNumber = $arrayN[2] * $arrayN[3];
-$result = $firstNumber + $secondNumber;
-echo $result;
 
 echo "<br>";
+
 echo "\n";
 
-$user = array(
-    'firstName' => 'George',
-    'lastName' => 'Lyamin',
-    'patronymic' => 'Winding'
-);
-echo $user['firstName'] . ' ' . $user['lastName'] . ' ' . $user['patronymic'];
 
-echo "<br>";
-echo "\n";
 
-$date = array('year' => 2001, 'month' => 9, 'day' => 11);
-$str = '';
-foreach ($date as $value) {
-    $str .= $value . '-';
+
+$sqrtArr = array_map('sqrt', $randArr);
+
+
+
+
+foreach ($sqrtArr as $elem) {
+
+    echo $elem . ' ';
+
 }
-$str = substr($str, 0, -1);
-echo $str;
+
+
+
 
 echo "<br>";
+
 echo "\n";
 
-$arr = ['a', 'b', 'c', 'd', 'e'];
-$count = 0;
-foreach ($arr as $elem) {
-    $count++;
+
+
+
+$keys = range('a', 'z');
+
+$values = range(1, 26);
+
+$key_valueArr = array_combine($keys, $values);
+
+
+
+
+foreach ($key_valueArr as $key => $value) {
+
+    echo "key: $key; value: $value";
+
+    echo "<br>";
+
+    echo "\n";
+
 }
-echo $count;
-echo $arr[$count - 1];
-echo $arr[$count - 2];
+
+
+
+
+$str = '1234567890';
+
+$sum = intval($str[0].$str[1]) + intval($str[2].$str[3]) + intval($str[4].$str[5]) + intval($str[6].$str[7]) + intval($str[8].$str[9]);
+
+echo $sum;
