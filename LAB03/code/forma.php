@@ -2,9 +2,14 @@
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $_SESSION['last_name'] = $_POST['last_name'];
-    $_SESSION['first_name'] = $_POST['first_name'];
-    $_SESSION['age'] = $_POST['age'];
+    $data = array(
+        'name' => $_POST['name'],
+        'age' => $_POST['age'],
+        'salary' => $_POST['salary'],
+        'condition' => $_POST['condition']
+    );
+
+    $_SESSION['user_data'] = $data;
     header('Location: output.php');
     exit;
 }
@@ -16,18 +21,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ФИВ</title>
+    <title>Данные пользователя</title>
 </head>
 <body>
     <form method="post">
-        <label for="last_name">Фамилия:</label>
-        <input type="text" name="last_name" id="last_name" required>
-        <br>
-        <label for="first_name">Имя:</label>
-        <input type="text" name="first_name" id="first_name" required>
+        <label for="name">Имя:</label>
+        <input type="text" name="name" id="name" required>
         <br>
         <label for="age">Возраст:</label>
         <input type="number" name="age" id="age" required>
+        <br>
+        <label for="salary">Зарплата:</label>
+        <input type="text" name="salary" id="salary" required>
+        <br>
+        <label for="condition">Положение:</label>
+        <input type="text" name="condition" id="condition" required>
         <br>
         <button type="submit">Submit</button>
     </form>

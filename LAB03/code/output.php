@@ -1,11 +1,9 @@
 <?php
 session_start();
 
-$last_name = isset($_SESSION['last_name']) ? $_SESSION['last_name'] : '';
-$first_name = isset($_SESSION['first_name']) ? $_SESSION['first_name'] : '';
-$age = isset($_SESSION['age']) ? $_SESSION['age'] : '';
+$user_data = isset($_SESSION['user_data']) ? $_SESSION['user_data'] : array();
 
-if (empty($last_name) || empty($first_name) || empty($age)) {
+if (empty($user_data)) {
     header('Location: forma.php');
     exit;
 }
@@ -21,8 +19,10 @@ if (empty($last_name) || empty($first_name) || empty($age)) {
 </head>
 <body>
     <h1>Данные пользователя</h1>
-    <p><strong>Фамилия:</strong> <?php echo $last_name; ?></p>
-    <p><strong>Имя:</strong> <?php echo $first_name; ?></p>
-    <p><strong>Возраст:</strong> <?php echo $age; ?></p>
+    <ul>
+        <?php foreach ($user_data as $key => $value) : ?>
+            <li><strong><?php echo $key; ?>:</strong> <?php echo $value; ?></li>
+        <?php endforeach; ?>
+    </ul>
 </body>
 </html>
