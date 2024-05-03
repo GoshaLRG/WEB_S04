@@ -1,0 +1,8 @@
+{
+    "name": "9e0r9/code",
+    "type": "project",
+    "require": {
+        "google/apiclient": "*",
+        "asimlqt/php-google-spreadsheet-client": "*"
+    }
+}
